@@ -1,28 +1,12 @@
-# from aiogram import Router, types
-# from aiogram.filters.command import Command
-#
-# picture_router = Router()
-#
-#
-# @picture_router.message(Command("picture"))
-# async def picture_handler(message: types.Message):
-#     image = types.FSInputFile("image/images.jpg")
-#     await message.answer_photo(
-#         photo=image,
-#         caption="Интереснейшая книга"
-#     )
-#
+
 from aiogram import Router, F, types
+dishes_router = Router()
 
-
-shop_router = Router()
-
-
-@shop_router.message(F.text == "хоррор")
+@dishes_router.message(F.text == "pizza")
 async def horror_handler(message: types.Message):
-    await message.answer("Книги жанра хоррор")
+    await message.answer("пепперони")
+    await message.answer("маргарита")
+    await message.answer("4 сезона")
+    await message.answer("с грибами")
+    await message.answer("5 сыров")
 
-
-@shop_router.message(F.text == "фантастика")
-async def fantasy_handler(message: types.Message):
-    await message.answer("Книги жанра фантастика")
