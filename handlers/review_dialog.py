@@ -17,7 +17,7 @@ class RestourantReview(StatesGroup):
     genre = State()
 
 
-@review_dialog_router.message(Command("opros"))
+@review_dialog_router.message(Command("review"))
 async def start_survey(message: types.Message, state: FSMContext):
     await state.set_state(RestourantReview.name)
     await message.answer("Как Вас зовут?")
